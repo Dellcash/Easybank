@@ -15,6 +15,14 @@ body {
 	position: relative;
 }
 
+.bg-desktop {
+	position: absolute;
+	max-width: none;
+	width: 60rem;
+	top: -12rem;
+	left: -3.3rem;
+}
+
 .mockup {
 	position: absolute;
 	top: -7.5rem;
@@ -42,4 +50,16 @@ footer{
 .logo {
 	filter: invert(100%) sepia(177%) hue-rotate(130deg) brightness(149%)
 		contrast(123%);
+}
+
+@media (min-width: 768px) {
+	.hero-image {
+		background-image: none;
+		height: 34rem;
+		/* width: 10rem; */
+	}
+	.mockup{
+		right: -8rem;
+		top: -6.5rem;
+	}
 }

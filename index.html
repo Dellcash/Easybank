@@ -12,69 +12,103 @@
 			href="./images/favicon-32x32.png"
 		/>
 		<link rel="stylesheet" href="./style.css" />
+
 		<script src="https://cdn.tailwindcss.com"></script>
+
 		<title>Easybank landing page</title>
 	</head>
 	<body>
-		<header class="relative mb-20">
+		<header class="relative mb-20 lg:mb-0">
 			<!-- top header -->
-			<div class="flex items-center justify-between px-5 bg-white py-7">
+			<div
+				class="flex items-center justify-between px-5 bg-white py-7 lg:px-40 lg:pb-5"
+			>
 				<img src="./images/logo.svg" alt="logo" />
-				<button @click="open = !open">
+				<button @click="open = !open" class="duration-300 ease-in lg:hidden">
 					<img v-if="!open" src="./images/icon-hamburger.svg" alt="hamburger" />
 					<img v-else src="./images/icon-close.svg" alt="close" />
 				</button>
-			</div>
-			<!-- hero -->
-			<div class="relative overflow-y-hidden hero-image">
-				<img
-					src="./images/image-mockups.png"
-					alt="mockups"
-					class="px-5 mockup"
-				/>
-			</div>
-			<!-- mobile nav -->
-			<nav
-				v-if="open"
-				class="absolute w-11/12 py-8 ml-4 space-y-5 text-center bg-white rounded-sm shadow-2xl lg:hidden top-24"
-			>
-				<h1 v-for="tab in tabs" :key="tab">{{ tab }}</h1>
-			</nav>
-			<!-- title and subtitle -->
-			<div class="mt-5 text-center">
-				<h1 class="text-4xl font-light">Next generation digital banking</h1>
-				<p class="px-4 pt-4 text-sm leading-6 text-gray-400">
-					Take your financial life online. Your Easybank account will be a
-					one-stop-shop for spending, saving, budgeting, investing, and much
-					more.
-				</p>
-				<div class="flex justify-center mt-8">
+				<!-- desktop nav -->
+				<div class="items-center justify-center hidden space-x-5 lg:flex">
+					<h1
+						v-for="tab in tabs"
+						:key="tab"
+						class="text-sm text-gray-400 cursor-pointer hover:text-gray-900 hover:border-b-4 hover:border-green-400"
+					>
+						{{ tab }}
+					</h1>
+				</div>
+				<div class="justify-center hidden lg:flex">
 					<button class="text-sm rounded-full btn">Request Invite</button>
+				</div>
+			</div>
+			<div class="lg:grid lg:grid-cols-2">
+				<!-- hero -->
+				<div
+					class="relative overflow-y-hidden hero-image lg:order-1 lg:overflow-x-hidden"
+				>
+					<img
+						src="./images/image-mockups.png"
+						alt="mockups"
+						class="px-5 mockup lg:z-10"
+					/>
+					<img
+						src="./images/bg-intro-desktop.svg"
+						alt="bg"
+						class="hidden bg-desktop lg:block"
+					/>
+				</div>
+				<!-- mobile nav -->
+				<nav
+					v-if="open"
+					class="absolute z-10 w-11/12 py-8 ml-4 space-y-5 text-center bg-white rounded-sm shadow-2xl lg:hidden top-24"
+				>
+					<h1 v-for="tab in tabs" :key="tab">{{ tab }}</h1>
+				</nav>
+				<!-- title and subtitle -->
+				<div class="mt-5 text-center lg:text-left lg:pl-40 lg:pr-10 lg:mt-36">
+					<h1 class="text-4xl font-light lg:text-5xl lg:leading-">
+						Next generation digital banking
+					</h1>
+					<p class="px-4 pt-4 text-sm leading-6 text-gray-400 lg:px-0 lg:pr-10">
+						Take your financial life online. Your Easybank account will be a
+						one-stop-shop for spending, saving, budgeting, investing, and much
+						more.
+					</p>
+					<div class="flex justify-center mt-8 lg:justify-start">
+						<button class="text-sm rounded-full btn">Request Invite</button>
+					</div>
 				</div>
 			</div>
 		</header>
 		<main>
-			<section class="main-section pb-14">
-				<div class="text-center py-14">
-					<h1 class="px-20 text-3xl font-light">Why choose Easybank?</h1>
-					<p class="px-4 pt-4 text-sm leading-6 text-gray-400">
+			<section class="main-section pb-14 lg:pt-10 lg:pb-24">
+				<div class="text-center py-14 lg:text-left lg:px-40">
+					<h1 class="px-20 text-3xl font-light lg:px-0">
+						Why choose Easybank?
+					</h1>
+					<p class="px-4 pt-4 text-sm leading-6 text-gray-400 lg:px-0 lg:w-2/4">
 						We leverage Open Banking to turn your bank account into your
 						financial hub. Control your finances like never before.
 					</p>
 				</div>
-				<div class="space-y-8 text-center">
+				<div
+					class="space-y-8 text-center lg:flex lg:px-40 lg:text-left lg:space-y-0 lg:space-x-4"
+				>
 					<div v-for="content in contents" :key="content">
-						<img :src="content.src" alt="icon" class="m-auto" />
+						<img :src="content.src" alt="icon" class="m-auto lg:m-0" />
 						<h1 class="py-4 text-2xl font-normal">{{ content.title }}</h1>
-						<p class="px-4 text-sm leading-6 text-gray-400">
+						<p class="px-4 text-sm leading-6 text-gray-400 lg:px-0">
 							{{ content.description }}
 						</p>
 					</div>
 				</div>
 			</section>
-			<section class="pt-20">
-				<h1 class="pb-10 text-3xl text-center">Latest Articles</h1>
-				<div class="px-5 space-y-5">
+			<section class="py-20 lg:px-40">
+				<h1 class="pb-10 text-3xl text-center lg:text-left lg:text-4xl">
+					Latest Articles
+				</h1>
+				<div class="px-5 space-y-5 lg:space-y-0 lg:flex lg:space-x-5 lg:px-0">
 					<div v-for="article in articles" :key="article">
 						<img :src="article.src" alt="photo" class="rounded-t-md" />
 						<div class="px-4 pt-5 pb-10 tracking-tighter bg-white rounded-b-md">
@@ -91,33 +125,58 @@
 			</section>
 		</main>
 		<footer>
-			<div class="py-10 space-y-7">
-				<img src="./images/logo.svg" alt="logo" class="m-auto logo"/>
-				<!-- social icons -->
-				<div
-					class="flex items-center justify-center space-x-3"
-				>
-					<img
-						v-for="social in socials"
-						:key="social"
-						:src="social"
-						alt="social icon"
-					/>
+			<div
+				class="py-10 space-y-7 lg:flex lg:items-end lg:justify-between lg:px-40 lg:pt-5"
+			>
+				<div>
+					<img src="./images/logo.svg" alt="logo" class="m-auto logo mb-7" />
+					<!-- social icons -->
+					<div class="flex items-center justify-center space-x-3 lg:mt-10">
+						<img
+							v-for="social in socials"
+							:key="social"
+							:src="social"
+							alt="social icon"
+						/>
+					</div>
 				</div>
-        <div class="space-y-3">
-          <h1 v-for="foo in footer" :key="foo" class="text-sm text-center text-gray-200">{{ foo }}</h1>
-        </div>
-        <div class="flex justify-center">
-					<button class="text-sm rounded-full btn">Request Invite</button>
+				<div class="space-y-3 lg:hidden">
+					<h1
+						v-for="foo in footer"
+						:key="foo"
+						class="text-sm text-center text-gray-200"
+					>
+						{{ foo }}
+					</h1>
 				</div>
-        <p class="text-sm text-center text-gray-500">© Easybank. All Rights Reserved</p>
+				<div class="hidden mr-32 lg:flex">
+					<div class="space-y-3 mr-28">
+						<h1
+							v-for="left in leftFooter"
+							class="text-sm text-gray-200 cursor-pointer hover:text-green-400"
+						>
+							{{left}}
+						</h1>
+					</div>
+					<div class="space-y-3">
+						<h1
+							v-for="right in rightFooter"
+							class="text-sm text-gray-200 cursor-pointer hover:text-green-400"
+						>
+							{{right}}
+						</h1>
+					</div>
+				</div>
+				<div>
+					<div class="flex justify-center lg:justify-end lg:mb-5 mb-7">
+						<button class="text-sm rounded-full btn">Request Invite</button>
+					</div>
+					<p class="text-sm text-center text-gray-500">
+						© Easybank. All Rights Reserved
+					</p>
+				</div>
 			</div>
 		</footer>
-
-		<!-- 
-  
-
-   -->
 
 		<!-- PetiteVue -->
 		<script src="https://unpkg.com/petite-vue" defer></script>

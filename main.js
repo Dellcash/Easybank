@@ -1,6 +1,6 @@
 PetiteVue.createApp({
   open: false,
-  tabs: ['Home', 'About', 'Contact', 'Blog', , 'Careers'],
+  tabs: ['Home', 'About', 'Contact', 'Blog', 'Careers'],
   contents: [
     {
       src: './images/icon-budgeting.svg',
@@ -25,7 +25,7 @@ PetiteVue.createApp({
   ],
   articles: [
     {
-      src: './images/image-currency.jpg',
+      src: './images/image-restaurant.jpg',
       by: 'By Claire Robinson',
       title: 'Receive money in any currency with no fees',
       description: 'The world is getting smaller and we’re becoming more mobile. So why should you be forced to only receive money in a single …'
@@ -57,5 +57,7 @@ PetiteVue.createApp({
     './images/icon-instagram.svg',
     './images/icon-pinterest.svg',
   ],
-  footer: ['About Us', 'Contact', 'Blog', 'Careers', 'Support', 'Privacy Policy']
+  footer: ['About Us', 'Contact', 'Blog', 'Careers', 'Support', 'Privacy Policy'],
+  leftFooter:['About Us', 'Contact', 'Blog'],
+  rightFooter:['Careers', 'Support', 'Privacy Policy'],
 }).mount();
