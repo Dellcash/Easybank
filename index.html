@@ -53,7 +53,6 @@
 				</div>
 			</div>
 		</header>
-		<!-- main content -->
 		<main>
 			<section class="main-section pb-14">
 				<div class="text-center py-14">
@@ -91,21 +90,34 @@
 				</div>
 			</section>
 		</main>
+		<footer>
+			<div class="py-10 space-y-7">
+				<img src="./images/logo.svg" alt="logo" class="m-auto logo"/>
+				<!-- social icons -->
+				<div
+					class="flex items-center justify-center space-x-3"
+				>
+					<img
+						v-for="social in socials"
+						:key="social"
+						:src="social"
+						alt="social icon"
+					/>
+				</div>
+        <div class="space-y-3">
+          <h1 v-for="foo in footer" :key="foo" class="text-sm text-center text-gray-200">{{ foo }}</h1>
+        </div>
+        <div class="flex justify-center">
+					<button class="text-sm rounded-full btn">Request Invite</button>
+				</div>
+        <p class="text-sm text-center text-gray-500">© Easybank. All Rights Reserved</p>
+			</div>
+		</footer>
+
 		<!-- 
-
-
   
 
-  About Us
-  Contact
-  Blog
-  Careers
-  Support
-  Privacy Policy
-
-  Request Invite
-
-  © Easybank. All Rights Reserved -->
+   -->
 
 		<!-- PetiteVue -->
 		<script src="https://unpkg.com/petite-vue" defer></script>

@@ -49,5 +49,13 @@ PetiteVue.createApp({
       description: 'After a lot of hard work by the whole team, we’re excited to launch our closed beta. It’s easy to request an invite through the site ...'
     },
 
-  ]
+  ],
+  socials: [
+    './images/icon-facebook.svg',
+    './images/icon-twitter.svg',
+    './images/icon-youtube.svg',
+    './images/icon-instagram.svg',
+    './images/icon-pinterest.svg',
+  ],
+  footer: ['About Us', 'Contact', 'Blog', 'Careers', 'Support', 'Privacy Policy']
 }).mount();
