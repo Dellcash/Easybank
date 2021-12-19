@@ -1,10 +1,20 @@
 
-.bg-top{
-  max-width: none;
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
 
+body{
+  font-family: 'Public Sans', sans-serif; 
+}
+
+.hero-image {
+  background-image: url("./images/bg-intro-mobile.svg");
+  height: 17.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 .mockup{
   position: absolute;
-  top: -8.3rem;
+  top: -7.5rem;
 }

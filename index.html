@@ -16,7 +16,7 @@
 		<title>Easybank landing page</title>
 	</head>
 	<body>
-		<header>
+		<header class="relative">
 			<div class="flex items-center justify-between px-5 py-7">
 				<img src="./images/logo.svg" alt="logo" />
 				<button @click="open = !open">
@@ -24,18 +24,17 @@
 					<img v-else src="./images/icon-close.svg" alt="close" />
 				</button>
 			</div>
-      <div class="relative overflow-y-hidden">
-        <img src="./images/bg-intro-mobile.svg" alt="bg" class="bg-top">
+      <div class="relative overflow-y-hidden hero-image">
         <img src="./images/image-mockups.png" alt="mockups" class="px-5 mockup">
       </div>
+      <!-- mobile nav -->
+      <nav v-if="open" class="absolute text-center shadow-2xl space-y-5 py-8 rounded-sm top-24 ml-4 w-11/12 bg-white">
+        <h1 v-for="tab in tabs" :key="tab">{{ tab }}</h1>
+      </nav>
 		</header>
 
 		<!-- 
-  Home
-  About
-  Contact
-  Blog
-  Careers
+
 
   Request Invite
 
