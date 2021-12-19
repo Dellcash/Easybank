@@ -2,7 +2,7 @@
 
 body {
 	font-family: "Public Sans", sans-serif;
-	background-color: hsl(220, 16%, 96%);
+	background-color: hsl(0, 0%, 98%);
 	color: hsl(233, 26%, 24%);
 }
 
@@ -29,4 +29,8 @@ body {
 	color: hsl(0, 0%, 98%);
 	border: none;
 	padding: 0.7rem 2rem;
+}
+
+.main-section{
+  background-color: hsl(220, 16%, 96%)
 }
