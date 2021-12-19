@@ -1,20 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
-
-body{
-  font-family: 'Public Sans', sans-serif; 
+body {
+	font-family: "Public Sans", sans-serif;
+	background-color: hsl(220, 16%, 96%);
+	color: hsl(233, 26%, 24%);
 }
 
 .hero-image {
-  background-image: url("./images/bg-intro-mobile.svg");
-  height: 17.5rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+	background-image: url("./images/bg-intro-mobile.svg");
+	height: 17.5rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
 }
 
-.mockup{
-  position: absolute;
-  top: -7.5rem;
+.mockup {
+	position: absolute;
+	top: -7.5rem;
+}
+
+.btn {
+	background-image: linear-gradient(
+		to right,
+		hsl(136, 65%, 51%),
+		hsl(192, 70%, 51%)
+	);
+	color: hsl(0, 0%, 98%);
+	border: none;
+	padding: 0.7rem 2rem;
 }
